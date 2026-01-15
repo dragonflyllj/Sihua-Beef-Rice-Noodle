@@ -210,3 +210,302 @@ body {
     font-size: 16px;
   }
 }
+/* =====================
+   Access Page Layout
+===================== */
+.access-page {
+  max-width: 1200px;
+  margin: 60px auto 100px;
+  padding: 0 20px;
+}
+
+.access-title {
+  text-align: center;
+  font-size: 32px;
+  margin-bottom: 50px;
+}
+
+.access-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 60px;
+}
+
+/* =====================
+   Access Card
+===================== */
+.access-card {
+  text-align: center;
+}
+
+.store-name {
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+/* Map image */
+.map-image img {
+  width: 100%;
+  max-width: 420px;
+  margin: 0 auto 20px;
+  display: block;
+}
+
+/* Buttons */
+.map-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin-bottom: 30px;
+}
+
+.map-buttons a {
+  background: #0e3a4d;
+  color: #fff;
+  padding: 10px 22px;
+  border-radius: 30px;
+  font-size: 13px;
+  text-decoration: none;
+}
+
+.map-buttons a:hover {
+  opacity: 0.9;
+}
+
+/* Info blocks */
+.info-block {
+  text-align: left;
+  background: #f3f3f3;
+  padding: 16px 18px;
+  margin-bottom: 16px;
+  font-size: 14px;
+}
+
+.info-block h3 {
+  font-size: 13px;
+  margin-bottom: 6px;
+  font-weight: 600;
+}
+
+/* Phone button */
+.phone-btn {
+  display: inline-block;
+  margin-top: 20px;
+  background: #0e3a4d;
+  color: #fff;
+  padding: 12px 26px;
+  border-radius: 30px;
+  font-size: 14px;
+  text-decoration: none;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .access-title {
+    font-size: 26px;
+  }
+
+  .info-block {
+    font-size: 13px;
+  }
+}
+/* =====================
+   Google Map Embed
+===================== */
+.map-embed {
+  width: 100%;
+  max-width: 420px;
+  margin: 0 auto 20px;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.map-embed iframe {
+  width: 100%;
+  height: 260px;
+  border: 0;
+}
+.map-note {
+  text-align: right;
+  font-size: 12px;
+}
+
+.map-note a {
+  color: #1a73e8;
+  text-decoration: none;
+}
+/* =====================
+   Map + Access Info
+===================== */
+.map-area {
+  margin-bottom: 30px;
+}
+
+/* Map */
+.map-embed {
+  width: 100%;
+  max-width: 420px;
+  margin: 0 auto;
+  border-radius: 8px;
+  overflow: hidden;
+  background: #eaeaea;
+}
+
+.map-embed iframe {
+  width: 100%;
+  height: 260px;
+  border: 0;
+  display: block;
+}
+
+/* Route button */
+.route-btn-wrap {
+  text-align: right;
+  margin: 8px 0 14px;
+}
+
+.route-btn {
+  font-size: 12px;
+  background: #fff;
+  border: 1px solid #ccc;
+  padding: 6px 14px;
+  border-radius: 20px;
+  text-decoration: none;
+  color: #333;
+}
+
+.route-btn:hover {
+  background: #f5f5f5;
+}
+
+/* Station list */
+.station-access {
+  font-size: 13px;
+  line-height: 1.7;
+  padding-left: 18px;
+}
+
+.station-access li {
+  margin-bottom: 4px;
+}
+/* =====================
+   5 Truths Page
+===================== */
+
+.truths {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 120px 20px 80px;
+}
+
+.truths-title {
+  text-align: center;
+  font-size: 32px;
+  letter-spacing: 0.1em;
+  margin-bottom: 10px;
+}
+
+.truths-subtitle {
+  text-align: center;
+  color: #777;
+  margin-bottom: 80px;
+}
+
+.truth-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 120px;
+  gap: 60px;
+}
+
+.truth-item.reverse {
+  flex-direction: row-reverse;
+}
+
+.truth-text {
+  flex: 1;
+}
+
+.truth-text h2 {
+  font-size: 48px;
+  color: #e6e1d6;
+  margin-bottom: 10px;
+}
+
+.truth-text h3 {
+  font-size: 22px;
+  margin-bottom: 15px;
+}
+
+.truth-text p {
+  line-height: 1.8;
+  color: #444;
+}
+
+.truth-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+.truth-image img {
+  width: min(420px, 80vw);
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 50%;
+  background: #fff;
+
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12), 0 4px 10px rgba(0, 0, 0, 0.06);
+
+  transition: transform 0.6s ease, box-shadow 0.6s ease;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .truth-item,
+  .truth-item.reverse {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .truth-image img {
+    width: 280px;
+    height: 280px;
+  }
+}
+.truth-image img {
+  width: min(420px, 80vw);
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 50%;
+}
+.truth-image {
+  position: relative;
+  display: inline-block;
+}
+
+.truth-image::after {
+  content: "";
+  position: absolute;
+  inset: -8px;
+  border-radius: 50%;
+  pointer-events: none;
+
+  background: linear-gradient(135deg, #e6c56e, #f6e3a1, #cfa64a);
+  z-index: -1;
+}
+
+.truth-image:hover img {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.16), 0 6px 14px rgba(0, 0, 0, 0.08);
+}
+.fade-in {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+.fade-in.show {
+  opacity: 1;
+  transform: translateY(0);
+}

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Access | 思華牛肉米粉</title>
+
+    <!-- Reuse existing CSS -->
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const mapContainer = document.querySelector(".map-embed");
+      const iframe = mapContainer.querySelector("iframe");
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            iframe.src = iframe.dataset.src;
+            observer.disconnect();
+          }
+        });
+      });
+
+      observer.observe(mapContainer);
+    });
+  </script>
+
+  <body>
+    <!-- Navbar (same as homepage) -->
+    <header class="navbar">
+      <div class="logo">思華牛肉米粉</div>
+
+      <nav class="nav">
+        <a href="index.html">Home</a>
+        <a href="#">Our Story</a>
+        <a href="#">Menu</a>
+        <a href="5truths.html">5 Truths</a>
+        <a href="access.html" class="active">Access</a>
+      </nav>
+    </header>
+
+    <!-- Access Page -->
+    <main class="access-page">
+      <h1 class="access-title">Access</h1>
+
+      <div class="access-grid">
+        <!-- Location Card -->
+        <section class="access-card">
+          <h2 class="store-name">思華牛肉米粉 横浜店</h2>
+          <div class="map-wrapper">
+            <div class="map-embed">
+              <iframe
+                data-src="https://www.google.com/maps?q=神奈川県横浜市中区山下町219&z=16&output=embed"
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+              >
+              </iframe>
+
+              <!-- Overlay buttons -->
+              <div class="map-overlay">
+                <a
+                  href="https://www.google.com/maps/dir/?api=1&destination=神奈川県横浜市中区山下町219"
+                  target="_blank"
+                  class="overlay-btn"
+                >
+                  ルート
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="map-buttons">
+            <a
+              href="https://www.google.com/maps?q=神奈川県横浜市中区山下町219"
+              target="_blank"
+              >Google map</a
+            >
+            <a
+              href="https://tabelog.com/kanagawa/A1401/A140105/14087194/?cid=google_yoyaku"
+              >Tabelog</a
+            >
+          </div>
+
+          <div class="info-block">
+            <h3>Address</h3>
+            <p>
+              〒231-0023<br />
+              神奈川県横浜市中区山下町219<br />
+              カーサ丸徳 1F
+            </p>
+          </div>
+
+          <div class="info-block">
+            <h3>Access</h3>
+            <ul class="station-access">
+              <li>JR京浜東北線「石川町駅」徒歩5分（340m）</li>
+              <li>みなとみらい線「日本大通り駅」徒歩6分（480m）</li>
+              <li>みなとみらい線「元町・中華街駅」徒歩7分（560m）</li>
+            </ul>
+          </div>
+
+          <div class="info-block">
+            <h3>Opening Hours</h3>
+            <p>
+              Mon – Sun<br />
+              11:00 – 20:00
+            </p>
+          </div>
+
+          <a class="phone-btn" href="tel:05054624352"> 📞 050-5462-4352 </a>
+        </section>
+
+        <!-- (Optional) Second location later -->
+        <!-- Duplicate .access-card if you add more branches -->
+      </div>
+    </main>
+
+    <footer class="footer">
+      <p>© 2026 思華牛肉米粉</p>
+    </footer>
+  </body>
+</html>
