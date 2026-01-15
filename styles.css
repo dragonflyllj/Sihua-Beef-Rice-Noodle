@@ -189,7 +189,21 @@ body {
   .menu-toggle {
     display: block;
   }
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 20px;
+    background: #faf7f2;
+    padding: 12px 20px;
+    border-radius: 10px;
+  }
 
+  .nav-links.open {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
   .nav {
     position: absolute;
     top: 100%;
