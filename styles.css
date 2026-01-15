@@ -16,43 +16,55 @@ body {
   line-height: 1.6;
 }
 
-/* =====================
-   Navigation Bar
-===================== */
-/* =====================
-   Sticky Navbar
-===================== */
+/* =========================
+   Navbar (Desktop First)
+========================= */
 .navbar {
-  display: flex;
-  align-items: center;
-  padding: 20px 60px;
-  background-color: #faf7f2;
   position: sticky;
   top: 0;
   z-index: 1000;
-}
 
-.logo {
-  font-weight: 700;
-  font-size: 18px;
-}
-
-.nav {
   display: flex;
-  gap: 30px;
-  margin-left: auto; /* 🔑 THIS LINE */
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 20px 60px;
+  background: #faf7f2;
 }
 
-.nav a {
+.logo a {
+  font-size: 18px;
+  font-weight: 700;
+  text-decoration: none;
+  color: #111;
+}
+
+/* Nav links (PC) */
+.nav-links {
+  display: flex;
+  align-items: center;
+}
+
+.nav-links a {
+  margin-left: 30px;
   text-decoration: none;
   font-size: 14px;
   color: #444;
 }
 
-.nav a:hover {
+.nav-links a:hover,
+.nav-links a.active {
   color: #b52b27;
 }
 
+/* Hamburger (hidden on PC) */
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 26px;
+  cursor: pointer;
+}
 /* =====================
    Hero Section
 ===================== */
@@ -176,9 +188,11 @@ body {
 /* =====================
    Mobile Navigation
 ===================== */
+
+/* Hamburger button */
 .menu-toggle {
   display: none;
-  font-size: 24px;
+  font-size: 26px;
   background: none;
   border: none;
   cursor: pointer;
@@ -189,41 +203,37 @@ body {
   .menu-toggle {
     display: block;
   }
+
+  .navbar {
+    position: relative;
+  }
+
   .nav-links {
     display: none;
     position: absolute;
     top: 100%;
     right: 20px;
-    background: #faf7f2;
-    padding: 12px 20px;
-    border-radius: 10px;
+
+    background-color: #faf7f2;
+    flex-direction: column;
+    padding: 16px 20px;
+    border-radius: 12px;
+
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
   }
 
   .nav-links.open {
     display: flex;
-    flex-direction: column;
-    gap: 12px;
-  }
-  .nav {
-    position: absolute;
-    top: 100%;
-    right: 0;
-    background-color: #faf7f2;
-    flex-direction: column;
-    width: 100%;
-    padding: 20px;
-    display: none;
   }
 
-  .nav.active {
-    display: flex;
-  }
-
-  .nav a {
+  .nav-links a {
+    margin: 0;
     padding: 10px 0;
-    font-size: 16px;
+    font-size: 14px;
+    white-space: nowrap;
   }
 }
+
 /* =====================
    Access Page Layout
 ===================== */
