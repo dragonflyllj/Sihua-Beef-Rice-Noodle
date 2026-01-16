@@ -234,184 +234,134 @@ body {
   }
 }
 
-/* =====================
-   Access Page Layout
-===================== */
+/* ============================
+   ACCESS PAGE – DESKTOP FIRST
+============================= */
+
 .access-page {
-  max-width: 1200px;
-  margin: 60px auto 100px;
-  padding: 0 20px;
+  background: #faf7f2;
+  color: #1f2a44;
 }
+
+/* Main layout */
+.access-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto 420px; /* Row 2 fixed height */
+  gap: 60px;
+  padding: 100px 80px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* ============================
+   ROW 1 – LEFT (Store Name)
+============================= */
 
 .access-title {
-  text-align: center;
+  grid-column: 1 / 2;
+}
+
+.access-title h1 {
   font-size: 32px;
-  margin-bottom: 50px;
+  letter-spacing: 0.08em;
+  margin-bottom: 24px;
 }
 
-.access-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 60px;
-}
-
-/* =====================
-   Access Card
-===================== */
-.access-card {
-  text-align: center;
-}
-
-.store-name {
-  font-size: 20px;
-  margin-bottom: 20px;
-}
-
-/* Map image */
-.map-image img {
-  width: 100%;
+.access-title p {
+  font-size: 15px;
+  line-height: 2;
   max-width: 420px;
-  margin: 0 auto 20px;
-  display: block;
 }
 
-/* Buttons */
-.map-buttons {
+/* ============================
+   ROW 1 – RIGHT (Info)
+============================= */
+
+.access-info {
+  grid-column: 2 / 3;
   display: flex;
-  justify-content: center;
-  gap: 16px;
-  margin-bottom: 30px;
-}
-
-.map-buttons a {
-  background: #0e3a4d;
-  color: #fff;
-  padding: 10px 22px;
-  border-radius: 30px;
-  font-size: 13px;
-  text-decoration: none;
-}
-
-.map-buttons a:hover {
-  opacity: 0.9;
-}
-
-/* Info blocks */
-.info-block {
-  text-align: left;
-  background: #f3f3f3;
-  padding: 16px 18px;
-  margin-bottom: 16px;
+  flex-direction: column;
+  gap: 28px;
   font-size: 14px;
+  line-height: 1.8;
 }
 
-.info-block h3 {
+.access-info h3 {
   font-size: 13px;
+  letter-spacing: 0.12em;
   margin-bottom: 6px;
-  font-weight: 600;
 }
 
-/* Phone button */
-.phone-btn {
-  display: inline-block;
-  margin-top: 20px;
-  background: #0e3a4d;
-  color: #fff;
-  padding: 12px 26px;
-  border-radius: 30px;
-  font-size: 14px;
-  text-decoration: none;
+.access-info a {
+  color: #1f2a44;
+  text-decoration: underline;
+  width: fit-content;
 }
 
-/* Mobile */
-@media (max-width: 768px) {
-  .access-title {
-    font-size: 26px;
-  }
+/* ============================
+   ROW 2 – LEFT (Photo)
+============================= */
 
-  .info-block {
-    font-size: 13px;
-  }
+.access-photo {
+  grid-column: 1 / 2;
+  height: 100%;
 }
-/* =====================
-   Google Map Embed
-===================== */
-.map-embed {
+
+.access-photo img {
   width: 100%;
-  max-width: 420px;
-  margin: 0 auto 20px;
-  border-radius: 8px;
-  overflow: hidden;
-}
-
-.map-embed iframe {
-  width: 100%;
-  height: 260px;
-  border: 0;
-}
-.map-note {
-  text-align: right;
-  font-size: 12px;
-}
-
-.map-note a {
-  color: #1a73e8;
-  text-decoration: none;
-}
-/* =====================
-   Map + Access Info
-===================== */
-.map-area {
-  margin-bottom: 30px;
-}
-
-/* Map */
-.map-embed {
-  width: 100%;
-  max-width: 420px;
-  margin: 0 auto;
-  border-radius: 8px;
-  overflow: hidden;
-  background: #eaeaea;
-}
-
-.map-embed iframe {
-  width: 100%;
-  height: 260px;
-  border: 0;
+  height: 100%;
+  object-fit: cover; /* Crop like reference */
   display: block;
 }
 
-/* Route button */
-.route-btn-wrap {
-  text-align: right;
-  margin: 8px 0 14px;
+/* ============================
+   ROW 2 – RIGHT (Map)
+============================= */
+
+.access-map {
+  grid-column: 2 / 3;
+  height: 100%;
 }
 
-.route-btn {
-  font-size: 12px;
-  background: #fff;
-  border: 1px solid #ccc;
-  padding: 6px 14px;
-  border-radius: 20px;
-  text-decoration: none;
-  color: #333;
+.access-map iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
 }
 
-.route-btn:hover {
-  background: #f5f5f5;
+/* ============================
+   MOBILE
+============================= */
+
+@media (max-width: 900px) {
+  .access-layout {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto auto;
+    padding: 60px 20px;
+    gap: 40px;
+  }
+
+  .access-title,
+  .access-info,
+  .access-photo,
+  .access-map {
+    grid-column: 1 / -1;
+  }
+
+  .access-photo {
+    height: auto;
+  }
+
+  .access-photo img {
+    height: auto;
+  }
+
+  .access-map iframe {
+    height: 320px;
+  }
 }
 
-/* Station list */
-.station-access {
-  font-size: 13px;
-  line-height: 1.7;
-  padding-left: 18px;
-}
-
-.station-access li {
-  margin-bottom: 4px;
-}
 /* =====================
    5 Truths Page
 ===================== */
@@ -532,4 +482,210 @@ body {
 .fade-in.show {
   opacity: 1;
   transform: translateY(0);
+}
+/* ============================
+   MENU PAGE
+============================ */
+
+.menu-page {
+  background: #faf7f2;
+  color: #1f2a44;
+  padding-bottom: 120px;
+}
+
+/* Header */
+.menu-header {
+  padding: 120px 80px 80px;
+}
+
+.menu-header .menu-en {
+  font-size: 12px;
+  letter-spacing: 0.15em;
+  display: block;
+  margin-bottom: 12px;
+}
+
+.menu-header h1 {
+  font-size: 26px;
+  letter-spacing: 0.12em;
+}
+
+/* Grid */
+.menu-grid {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr auto 1fr;
+  align-items: start;
+  gap: 40px;
+  padding: 0 80px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* Vertical dividers */
+.menu-divider {
+  width: 1px;
+  background: rgba(0, 0, 0, 0.15);
+  height: 100%;
+}
+
+/* Menu Item */
+.menu-item {
+  text-align: center;
+}
+
+.menu-item img {
+  width: 100%;
+  max-width: 280px;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  margin-bottom: 32px;
+}
+
+.menu-item h2 {
+  font-size: 16px;
+  line-height: 1.8;
+  margin-bottom: 16px;
+  letter-spacing: 0.08em;
+}
+
+.menu-item p {
+  font-size: 13px;
+  line-height: 1.9;
+  color: #333;
+}
+
+.menu-note {
+  font-size: 12px;
+  margin-bottom: 8px;
+}
+
+/* Footer link */
+.menu-footer {
+  text-align: right;
+  padding: 80px 80px 0;
+}
+
+.menu-footer a {
+  font-size: 13px;
+  color: #1f2a44;
+  text-decoration: underline;
+}
+
+/* ============================
+   MOBILE
+============================ */
+
+@media (max-width: 900px) {
+  .menu-header {
+    padding: 80px 20px 60px;
+  }
+
+  .menu-grid {
+    grid-template-columns: 1fr;
+    padding: 0 20px;
+    gap: 60px;
+  }
+
+  .menu-divider {
+    display: none;
+  }
+
+  .menu-footer {
+    padding: 60px 20px 0;
+    text-align: left;
+  }
+}
+/* ===== Our Story Page ===== */
+
+.story-wrapper {
+  max-width: 1200px;
+  margin: 120px auto 160px;
+  padding: 0 40px;
+}
+
+/* TOP LAYOUT */
+.story-top {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 40px;
+}
+
+/* CIRCLE IMAGE */
+.story-image {
+  display: flex;
+  justify-content: center;
+}
+
+.story-image img {
+  width: 420px;
+  height: 420px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 1px solid #d8c9a4;
+}
+
+/* VERTICAL TEXT */
+.story-vertical {
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  font-family: "Noto Serif JP", serif;
+}
+
+.story-vertical h1 {
+  font-size: 28px;
+  letter-spacing: 0.2em;
+  margin: 0 0 20px;
+}
+
+.story-vertical p {
+  font-size: 14px;
+  line-height: 2.4;
+}
+
+.story-en {
+  font-size: 12px;
+  letter-spacing: 0.3em;
+  color: #999;
+  margin-bottom: 20px;
+}
+
+/* MESSAGE SECTION */
+.story-message {
+  margin-top: 140px;
+  max-width: 760px;
+}
+
+.story-message h2 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.story-message h3 {
+  font-size: 14px;
+  font-weight: normal;
+  margin-bottom: 40px;
+}
+
+.story-text p {
+  font-size: 14px;
+  line-height: 2.2;
+  margin-bottom: 24px;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .story-top {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .story-vertical {
+    writing-mode: horizontal-tb;
+  }
+
+  .story-image img {
+    width: 300px;
+    height: 300px;
+  }
 }

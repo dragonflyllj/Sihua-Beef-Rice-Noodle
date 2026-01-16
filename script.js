@@ -1,18 +1,64 @@
-// Placeholder for future interactions
-// Example: smooth scroll, menu modal, animations, etc.
+document.addEventListener("DOMContentLoaded", () => {
+  /* =====================
+     Mobile Navigation
+  ===================== */
+  const menuToggle = document.querySelector(".menu-toggle");
+  const navLinks = document.querySelector(".nav-links");
 
-document.querySelector(".cta").addEventListener("click", () => {
-  alert("Menu page coming soon!");
-});
-const toggleButton = document.querySelector(".menu-toggle");
-const nav = document.querySelector(".nav");
+  if (menuToggle && navLinks) {
+    menuToggle.addEventListener("click", () => {
+      navLinks.classList.toggle("open");
+    });
 
-toggleButton.addEventListener("click", () => {
-  nav.classList.toggle("active");
-});
-const menuToggle = document.querySelector(".menu-toggle");
-const navLinks = document.querySelector(".nav-links");
+    navLinks.querySelectorAll("a").forEach((link) => {
+      link.addEventListener("click", () => {
+        navLinks.classList.remove("open");
+      });
+    });
+  }
 
-menuToggle.addEventListener("click", () => {
-  navLinks.classList.toggle("open");
+  /* =====================
+     Fade-in on Scroll
+  ===================== */
+  const fades = document.querySelectorAll(".fade");
+
+  if (fades.length) {
+    const observer = new IntersectionObserver(
+      (entries, obs) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("show");
+            obs.unobserve(entry.target); // prevents jumpiness
+          }
+        });
+      },
+      { threshold: 0.15 }
+    );
+
+    fades.forEach((el) => observer.observe(el));
+  }
+
+  /* =====================
+     Language Switch
+  ===================== */
+  const buttons = document.querySelectorAll(".lang-switch button");
+
+  if (buttons.length) {
+    buttons.forEach((btn) => {
+      btn.addEventListener("click", () => {
+        buttons.forEach((b) => b.classList.remove("active"));
+        btn.classList.add("active");
+
+        const lang = btn.dataset.lang;
+
+        document
+          .querySelectorAll(".lang-ja")
+          .forEach((el) => el.classList.toggle("hidden", lang !== "ja"));
+
+        document
+          .querySelectorAll(".lang-en")
+          .forEach((el) => el.classList.toggle("hidden", lang !== "en"));
+      });
+    });
+  }
 });
